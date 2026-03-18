@@ -65,8 +65,7 @@ The goal is to identify different customer groups and provide business insights 
 
 
 ##  Live Dashboard
-
-[Click here to view the dashboard][https://appapppy-m8xe3crhzaxnekfehofnar.streamlit.app/#project-overview](https://appapppy-m8xe3crhzaxnekfehofnar.streamlit.app/#project-overview)
+[https://appapppy-m8xe3crhzaxnekfehofnar.streamlit.app/#project-overview](https://appapppy-m8xe3crhzaxnekfehofnar.streamlit.app/#project-overview)
 
 ---
 
