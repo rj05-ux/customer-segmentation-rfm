@@ -6,7 +6,7 @@ st.set_page_config(page_title="Customer Segmentation", layout="wide")
 # -------------------------
 # TITLE
 # -------------------------
-st.title("🧠 Customer Segmentation Dashboard")
+st.title(" Customer Segmentation Dashboard")
 
 # -------------------------
 # SIDEBAR
@@ -57,7 +57,7 @@ elif page == "Insights":
 # SEGMENTS
 # -------------------------
 elif page == "Segments":
-    st.header("👥 Customer Segments")
+    st.header(" Customer Segments")
 
     # Cluster Table
     st.subheader("📊 Cluster Summary")
@@ -73,7 +73,7 @@ elif page == "Segments":
     st.dataframe(cluster_df)
 
     # Dropdown interaction
-    st.subheader("🔍 Explore Customer Segments")
+    st.subheader(" Explore Customer Segments")
 
     segment_option = st.selectbox(
         "Select Segment",
