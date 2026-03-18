@@ -6,19 +6,18 @@ st.set_page_config(page_title="Customer Segmentation", layout="wide")
 # -------------------------
 # TITLE
 # -------------------------
-st.title(" Customer Segmentation Dashboard")
+st.title("🧠 Customer Segmentation Dashboard")
 
 # -------------------------
 # SIDEBAR
 # -------------------------
-st.sidebar.header("Navigation")
-option = st.sidebar.radio("Go to", ["Overview", "Insights", "Segments"])
+page = st.sidebar.radio("Navigation", ["Overview", "Insights", "Segments"])
 
 # -------------------------
 # OVERVIEW
 # -------------------------
-if option == "Overview":
-    st.header(" Project Overview")
+if page == "Overview":
+    st.header("📌 Project Overview")
 
     st.write("""
     This project uses RFM (Recency, Frequency, Monetary) analysis 
@@ -39,8 +38,8 @@ if option == "Overview":
 # -------------------------
 # INSIGHTS
 # -------------------------
-elif option == "Insights":
-    st.header(" Key Insights")
+elif page == "Insights":
+    st.header("📊 Key Insights")
 
     st.write("""
     - Revenue is highly concentrated among a small group of customers  
@@ -48,48 +47,48 @@ elif option == "Insights":
     - Customer spending is highly skewed  
     """)
 
-    st.subheader(" Monthly Revenue Trend")
-    st.image("../images/monthly_revenue.png")
+    st.subheader("📈 Monthly Revenue Trend")
+    st.image("images/monthly_revenue.png")
 
-    st.subheader(" Elbow Method")
-    st.image("../images/elbow_plot.png")
+    st.subheader("📉 Elbow Method")
+    st.image("images/elbow_plot.png")
 
 # -------------------------
 # SEGMENTS
 # -------------------------
-elif option == "Segments":
-    st.header(" Customer Segments")
+elif page == "Segments":
+    st.header("👥 Customer Segments")
 
     # Cluster Table
-    st.subheader(" Cluster Summary")
+    st.subheader("📊 Cluster Summary")
 
-    data = {
+    cluster_data = {
         "Cluster": ["Low Value", "Medium Value", "High Value"],
         "Recency": [174, 64, 14],
         "Frequency": [15, 64, 267],
         "Monetary": [303, 1161, 6605]
     }
 
-    cluster_df = pd.DataFrame(data)
+    cluster_df = pd.DataFrame(cluster_data)
     st.dataframe(cluster_df)
 
-    # Interactive Dropdown
-    st.subheader(" Explore Customer Segments")
+    # Dropdown interaction
+    st.subheader("🔍 Explore Customer Segments")
 
-    option = st.selectbox(
+    segment_option = st.selectbox(
         "Select Segment",
         ["Low Value", "Medium Value", "High Value"]
     )
 
-    if option == "Low Value":
-        st.warning("These customers are inactive. Use discounts and campaigns to re-engage them.")
-    elif option == "Medium Value":
-        st.info("These customers have potential. Use upselling and personalized offers.")
+    if segment_option == "Low Value":
+        st.warning("Inactive customers → re-engage with discounts and campaigns")
+    elif segment_option == "Medium Value":
+        st.info("Potential customers → upsell and cross-sell strategies")
     else:
-        st.success("These are high-value customers. Focus on retention and loyalty programs.")
+        st.success("High-value customers → focus on retention and loyalty programs")
 
     # Cluster Visualization
     st.subheader("📍 Cluster Visualization")
-    st.image("../images/cluster_k3.png")
+    st.image("images/cluster_k3.png")
 
     st.success("Business Impact: Better targeting → Higher retention → Increased revenue")
