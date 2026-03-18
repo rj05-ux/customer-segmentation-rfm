@@ -1,25 +1,71 @@
 import streamlit as st
 import pandas as pd
 
-st.title("Customer Segmentation Dashboard")
+st.set_page_config(page_title="Customer Segmentation", layout="wide")
 
-st.write("## Project Overview")
-st.write("""
-This project uses RFM analysis and K-Means clustering to segment customers into:
-- High-value customers
-- Medium-value customers
-- Low-value customers
-""")
+# Title
+st.title(" Customer Segmentation Dashboard")
 
-st.write("## Sample Data")
+# Sidebar
+st.sidebar.header("Navigation")
+option = st.sidebar.radio("Go to", ["Overview", "Insights", "Segments"])
 
-# Load sample data (optional)
-st.write("Dataset preview not included in deployment version")
+# -------------------------
+# OVERVIEW
+# -------------------------
+if option == "Overview":
+    st.header(" Project Overview")
 
-st.write("## Insights")
+    st.write("""
+    This project uses RFM (Recency, Frequency, Monetary) analysis 
+    and K-Means clustering to segment customers based on behavior.
+    
+    Goal:
+    - Identify high-value customers
+    - Improve retention strategies
+    - Optimize marketing decisions
+    """)
 
-st.write("""
-- High-value customers contribute most revenue
-- Few customers generate majority of sales
-- Business should focus on retention and targeted marketing
-""")
+# -------------------------
+# INSIGHTS
+# -------------------------
+elif option == "Insights":
+    st.header(" Key Insights")
+
+    st.write("""
+    - Revenue is highly concentrated among a small group of customers
+    - Strong seasonal trend observed in monthly revenue
+    - Customer spending is highly uneven (skewed distribution)
+    """)
+
+    st.subheader("Monthly Revenue Trend")
+    st.image("images/monthly_revenue.png")
+
+    st.subheader("Elbow Method")
+    st.image("images/elbow_plot.png")
+
+# -------------------------
+# SEGMENTS
+# -------------------------
+elif option == "Segments":
+    st.header(" Customer Segments")
+
+    st.write("""
+    ### Cluster 0 — Low Value Customers
+    - High Recency
+    - Low Frequency
+    - Low Monetary
+
+    ### Cluster 1 — Medium Value Customers
+    - Moderate behavior
+    - Growth potential
+
+    ### Cluster 2 — High Value Customers
+    - Recent purchases
+    - High spending
+    """)
+
+    st.subheader("Cluster Visualization")
+    st.image("images/cluster_k3.png")
+
+    st.success("Business Impact: Target customers based on segment for better revenue optimization")
