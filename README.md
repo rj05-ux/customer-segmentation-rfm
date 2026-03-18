@@ -10,7 +10,7 @@ This project analyzes customer purchasing behavior using transaction data from a
 
 * Source: Kaggle
 * Dataset: Online Retail Dataset
-* Link: https://www.kaggle.com/datasets/ishanshrivastava/tata-online-retail-dataset
+* Link: [https://www.kaggle.com/datasets/ishanshrivastava/tata-online-retail-dataset](https://www.kaggle.com/datasets/ishanshrivastava28/tata-online-retail-dataset)
 
 ---
 
